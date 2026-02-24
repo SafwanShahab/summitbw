@@ -1,65 +1,135 @@
-import Image from "next/image";
+import React from "react";
+import Navbar from "../components/navbar.tsx";
 
-export default function Home() {
+const HomePage: React.FC = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="font-sans relative">
+      {/* Navbar */}
+
+      {/* Hero Section */}
+      <section className="relative bg-gray-900 text-white h-[650px]">
+        <img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1470&q=80"
+          alt="Residential construction project"
+          className="w-full h-full object-cover opacity-60"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+        <div className="absolute inset-0 flex flex-col justify-center items-start max-w-7xl mx-auto p-8 md:p-16 space-y-6">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+            Residential & Commercial Construction Experts
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg md:text-xl max-w-2xl text-gray-200">
+            Specializing in ADU construction, SB9 developments, full home rebuilds, remodels, and commercial projects throughout California.
+          </p>
+          <a
+            href="/get-started"
+            className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition"
+          >
+            GET A FREE CONSULTATION
+          </a>
+          <p className="text-sm text-gray-300 pt-4">
+            Licensed & Insured • CSLB License #1140888
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Services Section */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-black">
+            OUR SERVICES
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            {/* ADU & SB9 */}
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition">
+              <h3 className="text-xl font-bold mb-4 text-black">
+                ADU & SB9 Development
+              </h3>
+              <p className="text-gray-600">
+                Custom ADUs and SB9 lot developments built to meet California regulations with precision and efficiency.
+              </p>
+            </div>
+
+            {/* Residential */}
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition">
+              <h3 className="text-xl font-bold mb-4 text-black">
+                Rebuilds & Remodels
+              </h3>
+              <p className="text-gray-600">
+                Full home rebuilds and major renovations delivered with quality craftsmanship and attention to detail.
+              </p>
+            </div>
+
+            {/* Commercial */}
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition">
+              <h3 className="text-xl font-bold mb-4 text-black">
+                Commercial Projects
+              </h3>
+              <p className="text-gray-600">
+                Tenant improvements, commercial build-outs, and structural renovations executed professionally and on schedule.
+              </p>
+            </div>
+
+            {/* Solar */}
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition">
+              <h3 className="text-xl font-bold mb-4 text-black">
+                Solar Installation
+              </h3>
+              <p className="text-gray-600">
+                Residential and commercial solar solutions designed to maximize energy efficiency and long-term savings.
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="bg-gray-900 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 text-center space-y-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-green-500">
+            HOW IT WORKS
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="bg-gray-800 rounded-xl p-8 space-y-4">
+              <div className="text-green-500 font-bold text-3xl">1</div>
+              <h3 className="font-bold text-lg">Free Consultation</h3>
+              <p className="text-gray-300">
+                We visit your site or review city-approved plans to understand your project.
+              </p>
+            </div>
+
+            <div className="bg-gray-800 rounded-xl p-8 space-y-4">
+              <div className="text-green-500 font-bold text-3xl">2</div>
+              <h3 className="font-bold text-lg">Detailed Quote</h3>
+              <p className="text-gray-300">
+                Transparent pricing delivered within 2–3 days with a quick turnaround.
+              </p>
+            </div>
+
+            <div className="bg-gray-800 rounded-xl p-8 space-y-4">
+              <div className="text-green-500 font-bold text-3xl">3</div>
+              <h3 className="font-bold text-lg">Contract & Deposit</h3>
+              <p className="text-gray-300">
+                Project agreement finalized and deposit secured before construction begins.
+              </p>
+            </div>
+
+            <div className="bg-gray-800 rounded-xl p-8 space-y-4">
+              <div className="text-green-500 font-bold text-3xl">4</div>
+              <h3 className="font-bold text-lg">Build & Deliver</h3>
+              <p className="text-gray-300">
+                Professional execution with clear communication until final walkthrough.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
-}
+};
+
+
+
+export default HomePage;
