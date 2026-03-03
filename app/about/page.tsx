@@ -1,101 +1,123 @@
 import React from "react";
-import Navbar from "../../components/navbar.tsx";
+import Image from "next/image";
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="font-sans relative">
-      {/* Navbar */}
+    <div className="font-sans">
 
-      {/* Hero Section */}
-      <section className="bg-gray-900 text-white py-24">
-        <div className="max-w-5xl mx-auto px-6 text-center space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold">
-            About Summit Buildworks
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-            A licensed California construction company specializing in ADU development,
-            SB9 projects, full home rebuilds, remodels, and commercial construction.
-          </p>
+      {/* HERO WITH IMAGE BACKGROUND */}
+      <section className="relative h-[850px] text-white">
+        <Image
+          src="/0about.jpeg"
+          alt="Summit Buildworks construction"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60 flex items-center">
+          <div className="max-w-6xl mx-auto px-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-9">
+              ADUs, SB9 Projects, Remodels, and Commercial Builds
+            </h1>
+            <p className="text-lg md:text-xl max-w-2xl text-gray-200">
+              A licensed California construction company specializing in residential builds, ADUs, SB9 projects, remodels, and commercial construction.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Company Overview */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      {/* WHO WE ARE */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center z-0">
+          
+          <div className="relative h-[450px] rounded-2xl overflow-hidden shadow-2xl">
+            <Image
+              src="/1about.jpeg"
+              alt="Residential construction"
+              fill
+              className="object-cover"
+            />
+          </div>
+
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-black">
+            <h2 className="text-4xl font-bold text-black">
               Who We Are
             </h2>
-            <p className="text-gray-700 leading-relaxed">
-              Summit Buildworks delivers high-quality residential and commercial
-              construction services throughout California. Our team focuses on
-              precision, compliance, and efficiency—ensuring every project meets
-              city regulations and client expectations.
+            <p className="text-gray-700 leading-relaxed text-lg">
+              Summit Buildworks is a licensed and insured California contractor
+              specializing primarily in residential construction. From custom ADUs
+              and SB9 developments to full rebuilds and remodels, we deliver
+              projects that meet strict city compliance and high construction standards.
             </p>
-            <p className="text-gray-700 leading-relaxed">
-              From custom ADUs and SB9 developments to full home rebuilds and
-              major remodels, we bring professionalism, transparency, and strong
-              project management to every build.
+            <p className="text-gray-700 leading-relaxed text-lg">
+              We work alongside a trusted design and engineering team to handle
+              your project from concept to completion — including drawings,
+              city approvals, and final construction.
             </p>
-          </div>
 
-          <div className="bg-gray-100 p-10 rounded-2xl shadow-lg space-y-6">
-            <h3 className="text-2xl font-bold text-black">
-              Why Choose Us
-            </h3>
-            <ul className="space-y-3 text-gray-700">
-              <li>✔ Licensed & Insured</li>
-              <li>✔ CSLB License #1140888</li>
-              <li>✔ Free On-Site Consultations</li>
-              <li>✔ 2–3 Day Quote Turnaround</li>
-              <li>✔ No Project Too Large</li>
-            </ul>
+            <div className="grid grid-cols-2 gap-6 pt-6">
+              <div>
+                <h3 className="font-bold text-xl text-black">Licensed & Insured</h3>
+                <p className="text-gray-600">CSLB #1140888</p>
+              </div>
+              <div>
+                <h3 className="font-bold text-xl text-black">Free Consultation</h3>
+                <p className="text-gray-600">On-site or plan review</p>
+              </div>
+              <div>
+                <h3 className="font-bold text-xl text-black">Fast Quotes</h3>
+                <p className="text-gray-600">2–3 day turnaround</p>
+              </div>
+              <div>
+                <h3 className="font-bold text-xl text-black">No Project Too Large</h3>
+                <p className="text-gray-600">Residential & commercial</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Specializations Section */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center space-y-12">
-          <h2 className="text-3xl font-bold text-black">
-            Our Specializations
+      {/* IMAGE GRID SECTION */}
+      <section className="bg-gray-900 py-24">
+        <div className="max-w-6xl mx-auto px-6 text-center mb-16">
+          <h2 className="text-4xl font-bold text-white">
+            Our Work
           </h2>
+          <p className="text-gray-400 mt-4">
+            Quality craftsmanship across every project.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <h3 className="font-bold text-xl mb-4 text-black">
-                ADU & SB9 Development
-              </h3>
-              <p className="text-gray-600">
-                Expertise in Accessory Dwelling Units and SB9 lot developments
-                built to meet California housing regulations.
-              </p>
-            </div>
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+          <div className="relative h-[300px] rounded-2xl overflow-hidden">
+            <Image
+              src="/2about.jpeg"
+              alt="Construction project"
+              fill
+              className="object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <h3 className="font-bold text-xl mb-4 text-black">
-                Residential Rebuilds & Remodels
-              </h3>
-              <p className="text-gray-600">
-                Full-scale home rebuilds and renovations executed with quality
-                craftsmanship and attention to detail.
-              </p>
-            </div>
+          <div className="relative h-[300px] rounded-2xl overflow-hidden">
+            <Image
+              src="/3about.jpeg"
+              alt="Remodel project"
+              fill
+              className="object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <h3 className="font-bold text-xl mb-4 text-black">
-                Commercial Construction
-              </h3>
-              <p className="text-gray-600">
-                Professional tenant improvements, commercial build-outs, and
-                structural renovations delivered on schedule.
-              </p>
-            </div>
+          <div className="relative h-[300px] rounded-2xl overflow-hidden">
+            <Image
+              src="/4about.jpeg"
+              alt="ADU build"
+              fill
+              className="object-cover hover:scale-105 transition duration-500"
+            />
           </div>
         </div>
       </section>
 
-      
     </div>
   );
 };

@@ -1,25 +1,65 @@
+"use client";
+
 import React from "react";
-import Navbar from "../../components/navbar.tsx";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function GetStartedPage() {
+  const scrollToCTA = () => {
+    const element = document.getElementById("cta-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div>
-        {/* Navbar */}
+    <div className="pt-0">
 
       {/* Hero Section */}
-      <section className="pt-40 pb-24 bg-gray-900 text-white text-center px-6">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          Start Your Project With Summit Buildworks
-        </h1>
-        <p className="max-w-3xl mx-auto text-lg text-gray-300">
-          Whether you're planning an ADU, SB9 development, full home rebuild,
-          remodel, or commercial project, our team is ready to guide you from
-          consultation to completion.
-        </p>
+      <section className="relative h-[850px] flex flex-col items-center justify-center text-center text-white px-6 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/getstarted.jpeg"
+            alt="Construction Project"
+            fill
+            priority
+            className="object-cover object-[0_50%]"
+          />
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        {/* Hero Content */}
+        <div className="max-w-4xl relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Start Your Project With Summit Buildworks
+          </h1>
+          <p className="text-lg md:text-xl text-gray-200 mb-8">
+            Whether you're planning an ADU, SB9 development, full home rebuild,
+            remodel, or commercial project, our team is ready to guide you from
+            consultation to completion.
+          </p>
+
+          {/* Yellow Button */}
+          <button
+            onClick={scrollToCTA}
+            className="inline-flex items-center justify-center
+                       px-10 py-4
+                       text-black font-semibold tracking-wide
+                       rounded-full
+                       bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600
+                       shadow-lg shadow-yellow-500/30
+                       transition-all duration-300
+                       hover:scale-105 hover:shadow-xl hover:shadow-yellow-500/40
+                       active:scale-95"
+          >
+            Learn More →
+          </button>
+        </div>
       </section>
 
       {/* Call To Action Section */}
-      <section className="py-20 px-6 bg-white text-center">
+      <section id="cta-section" className="py-20 px-6 bg-white text-center mt-0">
         <div className="max-w-4xl mx-auto space-y-8">
           <h2 className="text-3xl font-bold text-black">
             Let’s Talk About Your Goals
@@ -31,12 +71,21 @@ export default function GetStartedPage() {
             approved city plans to ensure accurate pricing and planning.
           </p>
 
-          <a
+          {/* Matching Yellow Button */}
+          <Link
             href="/estimate"
-            className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-10 py-4 rounded-lg transition duration-300"
+            className="inline-flex items-center justify-center
+                       px-12 py-4
+                       text-black font-semibold tracking-wide
+                       rounded-full
+                       bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600
+                       shadow-lg shadow-yellow-500/30
+                       transition-all duration-300
+                       hover:scale-105 hover:shadow-xl hover:shadow-yellow-500/40
+                       active:scale-95"
           >
             Request a Free Estimate
-          </a>
+          </Link>
 
           <div className="pt-6 text-gray-700">
             Or Call Us Directly
@@ -48,11 +97,11 @@ export default function GetStartedPage() {
         </div>
       </section>
 
-      {/* Darker Trust Section */}
+      {/* Trust Section */}
       <section className="bg-gray-100 py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-center">
 
-          <div className="bg-white p-10 rounded-2xl shadow-lg">
+          <div className="bg-white p-10 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105">
             <h3 className="text-2xl font-bold text-black mb-4">
               Licensed & Insured
             </h3>
@@ -61,7 +110,7 @@ export default function GetStartedPage() {
             </p>
           </div>
 
-          <div className="bg-white p-10 rounded-2xl shadow-lg">
+          <div className="bg-white p-10 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105">
             <h3 className="text-2xl font-bold text-black mb-4">
               Free Consultations
             </h3>
@@ -70,7 +119,7 @@ export default function GetStartedPage() {
             </p>
           </div>
 
-          <div className="bg-white p-10 rounded-2xl shadow-lg">
+          <div className="bg-white p-10 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105">
             <h3 className="text-2xl font-bold text-black mb-4">
               Fast Turnaround
             </h3>
